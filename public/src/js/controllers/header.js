@@ -14,9 +14,19 @@ angular.module('insight.system').controller('HeaderController',
       'title': 'Blocks',
       'link': 'blocks'
     }, {
-      'title': 'Status',
-      'link': 'status'
-    }];
+        'title': 'More',
+        'items': [
+            {
+                'title': 'Rich list',
+                'link': 'richlist'
+            },
+            {
+                'title': 'Status',
+                'link': 'status'
+            }
+        ]
+    }
+    ];
 
     $scope.openScannerModal = function() {
       var modalInstance = $uibModal.open({

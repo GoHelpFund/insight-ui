@@ -1,0 +1,32 @@
+<section>
+    <div class="page-header">
+        <h1 translate>Rich list</h1>
+    </div>
+    <div class="col-xs-12 col-md-8">
+        <table class="table" data-ng-controller="RealSupplyController">
+            <tbody>
+            <tr>
+                <td translate>Total HELP supply</td>
+                <td class="text-right">{{realSupply}}</td>
+                <td class="text-right" ng-style="{'visibility': $root.currency.symbol=='ZCOIN'?'hidden':'visible'}">{{$root.currency.getConvertion(realSupplyRaw)}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <table class="table" data-ng-controller="RichListController">
+        <thead>
+        <tr>
+            <th translate>Rank</th>
+            <th translate>Address</th>
+            <th translate>Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="item in items">
+            <td>#{{item.rank}}</td>
+            <td><a href="address/{{item.addr}}">{{item.addr}}</a></td>
+            <td>{{$root.currency.getConvertion(item.balance / 100000000) || item.balance/100000000}}</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
