@@ -10,10 +10,12 @@ angular.module('insight.system').controller('HeaderController',
       symbol: 'HELP'
     };
 
-    $scope.menu = [{
+    $scope.menu = [
+    {
       'title': 'Blocks',
       'link': 'blocks'
-    }, {
+    },
+    {
         'title': 'More',
         'items': [
             {
